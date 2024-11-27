@@ -59,7 +59,6 @@ int main() {
 
 			cout << "Enter the code to delete: "; // prompt user to enter code
 			cin >> code; // read code from user
-			cout << endl; // output blank line for formatting purposes
 
 			// this can be used to give user feedback if the code is not found
 			if (!tree.searchNode(code)) { // if code is not found
@@ -70,6 +69,7 @@ int main() {
 
 			}
 
+			cout << endl; // output blank line for formatting purposes
 			tree.remove(code); // remove code from tree
 			break;
 
