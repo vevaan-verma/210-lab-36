@@ -42,6 +42,71 @@ int main() {
 
 	while (choice != 5) { // while choice is not to exit
 
+		string code; // create string to store code
+
+		switch (choice) {// switch on choice
+
+		case 1: // add record
+
+			cout << "Enter the code to add: "; // prompt user to enter code
+			cin >> code; // read code from user
+
+			tree.insertNode(code); // insert code into tree
+			break;
+
+		case 2: // delete record
+
+			cout << "Enter the code to delete: "; // prompt user to enter code
+			cin >> code; // read code from user
+
+			// this can be used to give user feedback if the code is not found
+			if (!tree.searchNode(code)) { // if code is not found
+
+				cout << "Code not found." << endl; // output message
+				break;
+
+			}
+
+			tree.remove(code); // remove code from tree
+			break;
+
+		case 3: // search record
+
+			cout << "Enter the code to search: "; // prompt user to enter code
+			cin >> code; // read code from user
+
+			if (tree.searchNode(code)) // if code is found
+				cout << "Code found." << endl; // output message
+			else // if code is not found
+				cout << "Code not found." << endl; // output message
+
+			break;
+
+		case 4: // modify record
+
+			cout << "Enter the code to modify: "; // prompt user to enter code
+			cin >> code; // read code from user
+
+			// this can be used to give user feedback if the code is not found
+			if (!tree.searchNode(code)) { // if code is not found
+
+				cout << "Code not found." << endl; // output message
+				break;
+
+			}
+
+			tree.remove(code); // remove code from tree
+
+			cout << "Enter the new code: "; // prompt user to enter new code
+			cin >> code; // read code from user
+
+			tree.insertNode(code); // insert code into tree
+			break;
+
+		}
+
+		choice = getMenuChoice(); // get new choice from user
+
 	}
 
 	return 0;
