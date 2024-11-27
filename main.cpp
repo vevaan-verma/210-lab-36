@@ -50,6 +50,7 @@ int main() {
 
 			cout << "Enter the code to add: "; // prompt user to enter code
 			cin >> code; // read code from user
+			cout << endl; // output blank line for formatting purposes
 
 			tree.insertNode(code); // insert code into tree
 			break;
@@ -58,11 +59,13 @@ int main() {
 
 			cout << "Enter the code to delete: "; // prompt user to enter code
 			cin >> code; // read code from user
+			cout << endl; // output blank line for formatting purposes
 
 			// this can be used to give user feedback if the code is not found
 			if (!tree.searchNode(code)) { // if code is not found
 
 				cout << "Code not found." << endl; // output message
+				cout << endl; // output blank line for formatting purposes
 				break;
 
 			}
@@ -80,6 +83,7 @@ int main() {
 			else // if code is not found
 				cout << "Code not found." << endl; // output message
 
+			cout << endl; // output blank line for formatting purposes
 			break;
 
 		case 4: // modify record
@@ -91,6 +95,7 @@ int main() {
 			if (!tree.searchNode(code)) { // if code is not found
 
 				cout << "Code not found." << endl; // output message
+				cout << endl; // output blank line for formatting purposes
 				break;
 
 			}
@@ -99,6 +104,7 @@ int main() {
 
 			cout << "Enter the new code: "; // prompt user to enter new code
 			cin >> code; // read code from user
+			cout << endl; // output blank line for formatting purposes
 
 			tree.insertNode(code); // insert code into tree
 			break;
@@ -106,6 +112,7 @@ int main() {
 		}
 
 		choice = getMenuChoice(); // get new choice from user
+		cout << endl; // output blank line for formatting purposes
 
 	}
 
